@@ -1084,8 +1084,7 @@ def cli_setup():
     parser.add_argument('--bootloader-sonoff-usb', action='store_true', help='Toggles RTS and DTR in the correct pattern for Sonoff USB dongle')
     parser.add_argument('-D', '--disable-bootloader', action='store_true', help='After finishing, disable the bootloader')
     parser.add_argument('--version', action='version', version='%(prog)s ' + version())
-    parser.add_argument('file')
-
+    parser.add_argument('file', nargs='?', default=None, help='Firmware file to read/write')
     return parser.parse_args()
 
 def main_cli():
